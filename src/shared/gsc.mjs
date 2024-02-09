@@ -111,4 +111,6 @@ export async function requestIndexing(accessToken, url) {
     console.error(`Response was: ${response.status}`);
     console.error(await response.text());
   }
+
+  return response.status;
 }

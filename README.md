@@ -25,10 +25,16 @@ You can read more about the motivation behind it and how it works on this blog p
 
 1. Open a terminal and navigate to the folder where you cloned repository
 2. Run `npm install` to install the dependencies
-3. Run `npm run index <domain or url>` to index all the pages of your site.
+3. Run `npm run index <domain, url or csv>` to index all the pages of your site.
 - If your site is a `Domain` Property on GSC, then run it like `npm run index seogets.com`
-- Otherwise if it's a `URL Prefix` property, then run it like `npm run index https://seogets.com`
-- When in doubt try both 😀
+- If it's a `URL Prefix` property, then run it like `npm run index https://seogets.com`
+- If it's a local `csv`, then run it like `npm run index urls.csv`
+
+### Options
+
+`--credentials <path>` optionally pass the path to your credentials JSON (defaults to `service_account.json`)
+
+`npm run index urls.csv -- --credentials service.json`
 
 Here's an example of what you should expect:
 

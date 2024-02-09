@@ -1,14 +1,14 @@
 import { google } from "googleapis";
 import { existsSync, readFileSync } from "fs";
 
-export async function getAccessToken() {
-  if (!existsSync("./service_account.json")) {
-    console.error("❌ service_account.json not found, please follow the instructions in README.md");
-    console.error("");
-    process.exit(1);
+export async function getAccessToken(credentials) {
+  if (!existsSync(credentials)) {
+     console.error(`❌ ${credentials} not found, please follow the instructions in README.md`);
+     console.error("");
+     process.exit(1);
   }
 
-  const key = JSON.parse(readFileSync("./service_account.json", "utf8"));
+  const key = JSON.parse(readFileSync(credentials, "utf8"));
   const jwtClient = new google.auth.JWT(
     key.client_email,
     null,
